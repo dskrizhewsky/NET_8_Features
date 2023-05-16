@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_8_Features", "NET_8_Features.csproj", "{286AF5EA-4F22-4F1D-B2C4-A5AD10AE6F26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_8_Features_Benchmarks", "..\NET_8_Features_Benchmarks\NET_8_Features_Benchmarks.csproj", "{92FB5586-87FA-45EC-BCCD-0616FBDE2654}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{286AF5EA-4F22-4F1D-B2C4-A5AD10AE6F26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{286AF5EA-4F22-4F1D-B2C4-A5AD10AE6F26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{286AF5EA-4F22-4F1D-B2C4-A5AD10AE6F26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{286AF5EA-4F22-4F1D-B2C4-A5AD10AE6F26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92FB5586-87FA-45EC-BCCD-0616FBDE2654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92FB5586-87FA-45EC-BCCD-0616FBDE2654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92FB5586-87FA-45EC-BCCD-0616FBDE2654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92FB5586-87FA-45EC-BCCD-0616FBDE2654}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
