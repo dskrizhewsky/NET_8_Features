@@ -25,19 +25,34 @@
 */
 
 #endregion
+namespace NET_8_Features.Alias;
 
-using NET_8_Features.Alias;
-using NET_8_Features.Randomness;
+using operation = Func<int, int, int>;
 
-var colors = GetItemsSample.GetRandomColors(10);
-GetItemsSample.Print(colors);
-GetItemsSample.Shuffle(colors);
-Console.WriteLine("Shuffled");
-GetItemsSample.Print(colors);
+public enum opType
+{
+    Plus = 0,
+    Minus = 1,
+    Div = 2,
+    Mult = 3
+}
 
-var als = new AliasSample();
+public class AliasSample
+{
+    public operation? GetOperation(opType idx)
+    {
+        switch (idx)
+        {
+            case opType.Plus: return (a, b) => a + b;
+            case opType.Minus: return (a, b) => a - b;
+            case opType.Div: return (a, b) => a / b;
+            case opType.Mult: return (a, b) => a * b;
+            default: return null;
+        }
+    }
 
-Console.WriteLine(als.Calc(1, 1, opType.Plus));
-Console.WriteLine(als.Calc(10, 1, opType.Minus));
-Console.WriteLine(als.Calc(10, 5, opType.Div));
-Console.WriteLine(als.Calc(10, 2, opType.Mult));
+    public int Calc(int a, int b, opType opType)
+    {
+        return GetOperation(opType)(a, b);
+    }
+}
