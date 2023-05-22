@@ -39,20 +39,20 @@ public enum opType
 
 public class AliasSample
 {
-    public operation? GetOperation(opType idx)
+    private operation? GetOperation(opType idx)
     {
-        switch (idx)
+        return idx switch
         {
-            case opType.Plus: return (a, b) => a + b;
-            case opType.Minus: return (a, b) => a - b;
-            case opType.Div: return (a, b) => a / b;
-            case opType.Mult: return (a, b) => a * b;
-            default: return null;
-        }
+            opType.Plus => (a, b) => a + b,
+            opType.Minus => (a, b) => a - b,
+            opType.Div => (a, b) => a / b,
+            opType.Mult => (a, b) => a * b,
+            _ => null
+        };
     }
 
     public int Calc(int a, int b, opType opType)
     {
-        return GetOperation(opType)(a, b);
+        return GetOperation(opType)!(a, b);
     }
 }
