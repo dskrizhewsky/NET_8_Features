@@ -25,29 +25,28 @@
 */
 
 #endregion
+namespace NET_8_Features.Serialization;
 
-using System.Text.Json;
-using NET_8_Features.Alias;
-using NET_8_Features.Randomness;
-using NET_8_Features.Serialization;
+public interface IPerson
+{
+    public string Name { get; set; }
+}
 
-var colors = GetItemsSample.GetRandomColors(10);
-GetItemsSample.Print(colors);
-GetItemsSample.Shuffle(colors);
-Console.WriteLine("Shuffled");
-GetItemsSample.Print(colors);
+public interface IEmployee
+{
+    public string Company { get; set; }
+}
 
-var als = new AliasSample();
-
-Console.WriteLine(als.Calc(1, 1, opType.Plus));
-Console.WriteLine(als.Calc(10, 1, opType.Minus));
-Console.WriteLine(als.Calc(10, 5, opType.Div));
-Console.WriteLine(als.Calc(10, 2, opType.Mult));
-
-IEmployee emp = new Employee("sample text", "David", "XYZ ltd");
-var json = JsonSerializer.Serialize(emp);
-Console.WriteLine(json);
-json = JsonSerializer.Serialize(emp as Employee);
-Console.WriteLine(json);
-var newEmp = JsonSerializer.Deserialize<Employee>(json);
-Console.WriteLine($"Read-only property: {newEmp.Memo}");
+public class Employee : IEmployee
+{
+    protected Employee() { }
+    public Employee(string memo, string name, string company)
+    {
+        Memo = memo;
+        Name = name;
+        Company = company;
+    }
+    public string Memo { get; }
+    public string Name { get; set; }
+    public string Company { get; set; }
+}
